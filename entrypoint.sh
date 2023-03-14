@@ -59,9 +59,9 @@ elif [ "$#" -gt 2 ]; then
     exit 1;
 fi
 
-Xvfb :99 -screen 0 1600x1200x24+32 &
+# Xvfb :99 -screen 0 1600x1200x24+32 &
 ${SITL_RTSP_PROXY}/build/sitl_rtsp_proxy &
 
 source ${WORKSPACE_DIR}/edit_rcS.bash ${IP_API} ${IP_QGC} &&
 cd ${FIRMWARE_DIR} &&
-HEADLESS=1 make px4_sitl gazebo_${vehicle}__${world}
+make px4_sitl gazebo_${vehicle}__${world}
