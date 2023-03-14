@@ -4,7 +4,7 @@ function show_help {
     echo ""
     echo "Usage: ${0} [-h | -v VEHICLE | -w WORLD] [IP_API | IP_QGC IP_API]"
     echo ""
-    echo "Run a headless px4-gazebo simulation in a docker container. The"
+    echo "Run a px4-gazebo simulation in a docker container. The"
     echo "available vehicles and worlds are the ones available in PX4"
     echo "(i.e. when running e.g. \`make px4_sitl gazebo_iris__baylands\`)"
     echo ""
