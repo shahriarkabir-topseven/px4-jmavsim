@@ -64,4 +64,4 @@ ${SITL_RTSP_PROXY}/build/sitl_rtsp_proxy &
 
 source ${WORKSPACE_DIR}/edit_rcS.bash ${IP_API} ${IP_QGC} &&
 cd ${FIRMWARE_DIR} &&
-make px4_sitl gazebo_${vehicle}__${world}
+make px4_sitl gazebo-classic_${vehicle}__${world}
