@@ -45,6 +45,10 @@ RUN pip3 install --upgrade pip && \
                  toml \
                  pyyaml
 
+RUN apt-get update && \
+    apt-get install -y x11-apps && \
+    apt-get install -y xvfb
+
 RUN git clone https://github.com/PX4/PX4-Autopilot.git ${FIRMWARE_DIR}
 RUN git -C ${FIRMWARE_DIR} checkout main
 RUN git -C ${FIRMWARE_DIR} submodule update --init --recursive
