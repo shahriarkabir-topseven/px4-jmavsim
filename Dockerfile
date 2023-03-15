@@ -59,8 +59,8 @@ RUN chmod +x /root/entrypoint.sh
 
 RUN ["/bin/bash", "-c", " \
     cd ${FIRMWARE_DIR} && \
-    DONT_RUN=1 make px4_sitl gazebo && \
-    DONT_RUN=1 make px4_sitl gazebo \
+    DONT_RUN=1 make px4_sitl jmavsim && \
+    DONT_RUN=1 make px4_sitl jmavsim \
 "]
 
 COPY sitl_rtsp_proxy ${SITL_RTSP_PROXY}
