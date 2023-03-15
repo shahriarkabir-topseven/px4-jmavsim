@@ -5,7 +5,7 @@ ENV FIRMWARE_DIR ${WORKSPACE_DIR}/Firmware
 ENV SITL_RTSP_PROXY ${WORKSPACE_DIR}/sitl_rtsp_proxy
 
 ENV DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true
-ENV DISPLAY :99
+ENV DISPLAY :0
 ENV LANG C.UTF-8
 
 RUN apt-get update && \
@@ -44,6 +44,10 @@ RUN pip3 install --upgrade pip && \
                  pyros-genmsg \
                  toml \
                  pyyaml
+
+RUN apt-get update && \
+    apt-get install -y x11-apps && \
+    apt-get install -y xvfb
 
 RUN git clone https://github.com/PX4/PX4-Autopilot.git ${FIRMWARE_DIR}
 RUN git -C ${FIRMWARE_DIR} checkout main
