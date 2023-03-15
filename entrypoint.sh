@@ -59,7 +59,7 @@ elif [ "$#" -gt 2 ]; then
     exit 1;
 fi
 
-Xvfb :0 -screen 0 640x480x24+32 &
+Xvfb :0 -screen 0 640x480x24+0 &
 ${SITL_RTSP_PROXY}/build/sitl_rtsp_proxy &
 
 source ${WORKSPACE_DIR}/edit_rcS.bash ${IP_API} ${IP_QGC} &&
