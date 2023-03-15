@@ -9,7 +9,8 @@ ENV DISPLAY :0
 ENV LANG C.UTF-8
 
 RUN apt-get update && \
-    apt-get install -y bc \
+    apt-get install -y ant \
+                       bc \
                        cmake \
                        curl \
                        default-jdk \
