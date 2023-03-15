@@ -12,6 +12,7 @@ RUN apt-get update && \
     apt-get install -y bc \
                        cmake \
                        curl \
+                       default-jdk \
                        gazebo9 \
                        git \
                        gstreamer1.0-plugins-bad \
@@ -30,6 +31,7 @@ RUN apt-get update && \
                        python3-numpy \
                        python3-pip \
                        unzip \
+                       x11-apps \
                        xvfb && \
     apt-get -y autoremove && \
     apt-get clean autoclean && \
@@ -44,10 +46,6 @@ RUN pip3 install --upgrade pip && \
                  pyros-genmsg \
                  toml \
                  pyyaml
-
-RUN apt-get update && \
-    apt-get install -y x11-apps && \
-    apt-get install -y xvfb
 
 RUN git clone https://github.com/PX4/PX4-Autopilot.git ${FIRMWARE_DIR}
 RUN git -C ${FIRMWARE_DIR} checkout v1.13.2
