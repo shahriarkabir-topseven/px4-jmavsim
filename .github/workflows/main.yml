@@ -35,7 +35,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            shahriarkabirtopseven/px4-gazebo
+            shahriarkabirtopseven/px4-jmavsim
           # Configure tags:
           #   `master` branch -> `latest`
           #   `v{xx.yy.zz}` tag -> `{xx.yy.zz}`
