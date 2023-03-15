@@ -4,9 +4,9 @@ function show_help {
     echo ""
     echo "Usage: ${0} [-h | -v VEHICLE | -w WORLD] [IP_API | IP_QGC IP_API]"
     echo ""
-    echo "Run a px4-gazebo simulation in a docker container. The"
+    echo "Run a px4-jmavsim simulation in a docker container. The"
     echo "available vehicles and worlds are the ones available in PX4"
-    echo "(i.e. when running e.g. \`make px4_sitl gazebo_iris__baylands\`)"
+    echo "(i.e. when running e.g. \`make px4_sitl jmavsim_iris__baylands\`)"
     echo ""
     echo "  -h    Show this help"
     echo "  -v    Set the vehicle (default: iris)"
@@ -64,4 +64,4 @@ ${SITL_RTSP_PROXY}/build/sitl_rtsp_proxy &
 
 source ${WORKSPACE_DIR}/edit_rcS.bash ${IP_API} ${IP_QGC} &&
 cd ${FIRMWARE_DIR} &&
-make px4_sitl gazebo-classic_${vehicle}__${world}
+make px4_sitl jmavsim_${vehicle}__${world}
